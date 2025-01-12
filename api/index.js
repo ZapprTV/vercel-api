@@ -125,6 +125,8 @@ export async function GET(request, env, ctx) {
                             "Content-Type": "application/vnd.apple.mpegurl"
                         }
                     });
+                } else {
+                    return new Response(errorJSON, returnErrorHeaders(errorStatus));
                 };
             } else {
                 return new Response(JSON.stringify({
@@ -132,8 +134,6 @@ export async function GET(request, env, ctx) {
                     info: specifiedURL
                 }), returnErrorHeaders(400));
             }
-        } else {
-            return Response.redirect("https://github.com/ZapprTV/backend", 301);
         };
     } else if (request.method === "OPTIONS") {
         return new Response(null, {
