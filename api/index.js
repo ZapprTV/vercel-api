@@ -25,6 +25,7 @@ export async function GET(request, env, ctx) {
 
     const cloudflareURLRegexes = {
         dailymotion: /^https?:\/\/(?:www\.)?dailymotion\.com\/video\/[a-zA-Z0-9]+$/g,
+        youtube: /^https?:\/\/(?:www\.)?youtube\.com\/channel\/UC[a-zA-Z0-9-_? ]+$/g
     };
 
     const requestURL = new URL(request.url);
@@ -124,8 +125,6 @@ export async function GET(request, env, ctx) {
                             "Content-Type": "application/vnd.apple.mpegurl"
                         }
                     });
-                } else {
-                    return new Response(errorJSON, returnErrorHeaders(errorStatus));
                 };
             } else {
                 return new Response(JSON.stringify({
