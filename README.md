@@ -1,5 +1,9 @@
 Questa è l'API di Zappr su Vercel. Viene usata per far riprodurre al [frontend](https://github.com/ZapprTV/frontend) i canali trasmessi su Babylon Cloud e i canali Rai [senza geoblocking](#come-controllare-se-un-canale-rai-è-protetto-da-geoblocking).
 
+Per usarla, effettua una chiamata `GET` a `https://vercel-api.zappr.stream/api` e inserisci l'URL che vuoi "trasformare" come parametro.
+
+Per esempio, per "trasformare" l'URL di Rai News 24 (`https://mediapolis.rai.it/relinker/relinkerServlet.html?cont=1`), bisognerebbe fare una richiesta a `https://vercel-api.zappr.stream/api?https://mediapolis.rai.it/relinker/relinkerServlet.html?cont=1`.
+
 **Per i canali trasmessi su Dailymotion e YouTube (in base all'ID di un canale), usare l'[API su Cloudflare Workers](https://github.com/ZapprTV/cloudflare-api).**
 
 ## URL supportati
