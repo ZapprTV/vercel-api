@@ -25,7 +25,8 @@ export async function GET(request, env, ctx) {
 
     const cloudflareURLRegexes = {
         dailymotion: /^https?:\/\/(?:www\.)?dailymotion\.com\/video\/[a-zA-Z0-9]+$/g,
-        youtube: /^https?:\/\/(?:www\.)?youtube\.com\/channel\/UC[a-zA-Z0-9-_? ]+$/g
+        youtube: /^https?:\/\/(?:www\.)?youtube\.com\/channel\/UC[a-zA-Z0-9-_? ]+$/g,
+        livestream: /^https?:\/\/(?:www\.)?livestream\.com\/accounts\/[0-9]+\/events\/[0-9]+$/g
     };
 
     const requestURL = new URL(request.url);
@@ -76,7 +77,7 @@ export async function GET(request, env, ctx) {
             testURLforCloudflare(specifiedURL);
             if (cloudflareTestResults.matched) {
                 return new Response(JSON.stringify({
-                    error: "Stai usando l'API Vercel, ma l'URL specificato richiede l'uso dell'API Cloudflare. Leggi di più su https://github.com/ZapprTV/backend#readme.",
+                    error: "Stai usando l'API Vercel, ma l'URL specificato richiede l'uso dell'API Cloudflare. Leggi di più su https://github.com/ZapprTV/vercel-api#readme.",
                     info: specifiedURL
                 }), returnErrorHeaders(400));
             } else if (testResults.matched) {
@@ -130,7 +131,7 @@ export async function GET(request, env, ctx) {
                 };
             } else {
                 return new Response(JSON.stringify({
-                    error: "L'URL specificato non è valido, non è nel formato corretto oppure non è supportato dall'API di Zappr. Per vedere la lista di URL compatibili visita https://github.com/ZapprTV/backend#readme.",
+                    error: "L'URL specificato non è valido, non è nel formato corretto oppure non è supportato dall'API di Zappr. Per vedere la lista di URL compatibili visita https://github.com/ZapprTV/vercel-api#readme.",
                     info: specifiedURL
                 }), returnErrorHeaders(400));
             }
