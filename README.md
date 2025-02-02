@@ -1,4 +1,4 @@
-Questa è l'API di Zappr su Vercel. Viene usata per far riprodurre al [frontend](https://github.com/ZapprTV/Zappr) i canali trasmessi su YouTube e Babylon Cloud, e i canali Rai [senza geoblocking](#come-controllare-se-un-canale-rai-è-protetto-da-geoblocking).
+Questa è l'API di Zappr su Vercel. Viene usata per far riprodurre al [frontend](https://github.com/ZapprTV/Zappr) i canali trasmessi su Babylon Cloud e i canali Rai [senza geoblocking](#come-controllare-se-un-canale-rai-è-protetto-da-geoblocking).
 
 Per usarla, effettua una chiamata `GET` a `https://vercel-api.zappr.stream/api` e inserisci l'URL che vuoi "trasformare" come parametro.
 
@@ -7,10 +7,6 @@ Per esempio, per "trasformare" l'URL di Rai News 24 (`https://mediapolis.rai.it/
 **Per i canali trasmessi su Dailymotion e Vimeo Livestream, usare l'[API su Cloudflare Workers](https://github.com/ZapprTV/cloudflare-api).**
 
 ## URL supportati
-- YouTube (in base all'ID di un canale):
-    - `*://(www.)youtube.com/channel/UCxxxxxxxxxxxxxxx` (otterrà l'URL dell'ultima live avviata dal canale)
-    - `*://(www.)youtube.com/channel/UCxxxxxxxxxxxxxx?Stringa` (otterrà l'URL della live che contiene nel titolo la stringa presente dopo il punto interrogativo nell'URL)
-
 - Babylon Cloud:
     - `*://*/video/viewlivestreaming?rel=XX&cntr=0`
 
