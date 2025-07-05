@@ -25,7 +25,8 @@ export async function GET(request, env, ctx) {
 
     const cloudflareURLRegexes = {
         dailymotion: /^https?:\/\/(?:www\.)?dailymotion\.com\/video\/[a-zA-Z0-9]+$/g,
-        livestream: /^https?:\/\/(?:www\.)?livestream\.com\/accounts\/[0-9]+\/events\/[0-9]+$/g
+        livestream: /^https?:\/\/(?:www\.)?livestream\.com\/accounts\/[0-9]+\/events\/[0-9]+$/g,
+        netplus: /^https?:\/\/viamotionhsi\.netplus\.ch\/live\/eds\/.*\/browser-.*\/.*\..*$/g
     };
 
     const requestURL = new URL(request.url);

@@ -4,7 +4,7 @@ Per usarla, effettua una chiamata `GET` a `https://vercel-api.zappr.stream/api` 
 
 Per esempio, per "trasformare" l'URL di Rai News 24 (`https://mediapolis.rai.it/relinker/relinkerServlet.html?cont=1`), bisognerebbe fare una richiesta a `https://vercel-api.zappr.stream/api?https://mediapolis.rai.it/relinker/relinkerServlet.html?cont=1`.
 
-**Per i canali trasmessi su Dailymotion e Vimeo Livestream, usare l'[API su Cloudflare Workers](https://github.com/ZapprTV/cloudflare-api).**
+**Per i canali trasmessi su Dailymotion, Vimeo Livestream e Netplus, usare l'[API su Cloudflare Workers](https://github.com/ZapprTV/cloudflare-api).**
 
 ## URL supportati
 - Babylon Cloud:
